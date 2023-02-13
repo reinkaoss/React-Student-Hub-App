@@ -1,14 +1,14 @@
-import React from "react";
-import "./style.css"
-import Bin from "./images/recycle-bin.png"
-import { v4 as uuidv4 } from 'uuid';
+import React, { setState } from "react";
+import "./style.css";
+import Bin from "./images/recycle-bin.png";
+import Edit from "./images/edit.png";
+import { v4 as uuidv4 } from "uuid";
 
 class Hub extends React.Component {
   state = {
     newItem: "",
     list: [],
   };
-
 
   //  Changing the state
   updateInput = (key, value) => {
@@ -18,7 +18,7 @@ class Hub extends React.Component {
   addNote = () => {
     const newItem = {
       id: uuidv4(),
-      value: this.state.newItem.slice(),
+      value: this.state.newItem,
     };
 
     // copy list of tasks, using [...] to get all items
@@ -32,9 +32,13 @@ class Hub extends React.Component {
 
   // Using filter to delete item based on ID
   deleteNote = (id) => {
-    const updatedTasksList = this.state.list.filter((item) => item.id !== id);
+    const updatedNotesList = this.state.list.filter((item) => item.id !== id);
 
-    this.setState({ list: updatedTasksList });
+    this.setState({ list: updatedNotesList });
+  };
+
+  editNote = (value) => {
+    // this.setState figure out how to edit the note
   };
 
   render() {
@@ -42,9 +46,7 @@ class Hub extends React.Component {
       <div>
         <h1 className="studentHubTitle">My Notes</h1>
         <div className="containerHub">
-        <div className="notesContainer"></div>
-          <div
-          >
+          <div>
             <textarea
               className="notesInputText"
               type="text"
@@ -52,29 +54,37 @@ class Hub extends React.Component {
               value={this.state.newItem}
               onChange={(e) => this.updateInput("newItem", e.target.value)}
             />
-            <button
-              className="add-btn btn-success"
-              onClick={this.addNote}
-              disabled={!this.state.newItem.length}
-            >
+            <button className="add-btn btn-success" onClick={this.addNote}>
               <i class="delete-icon"> + </i>
             </button>
 
-            <ul>
+        <div className="outerWrap">
+            <ul className="notesContainer">
               {this.state.list.map((item) => {
                 return (
+                  <div className="container">
+                    <div className="NotesRow">
                   <div class="card">
-  <div class="card-body">
-        <p key={item.id} >
-                    {item.value} </p>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => this.deleteNote(item.id)}
-                    >
-                      
-                      <img className="binLogo" src={Bin} alt="bin" />
-                      {/* <i class="delete-icon">x</i> */}
-                    </button>
+                    <div class="card-body">
+                      <p key={item.id}>{item.value} </p>
+                      <div className="buttonsContainer">
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => this.deleteNote(item.id)}
+                      >
+                        <img className="binLogo" src={Bin} alt="bin" />
+
+                        {/* <i class="delete-icon">x</i> */}
+                      </button>
+                      <button
+                        className="btn btn-warning"
+                        onClick={() => this.editNote(item.value)}
+                      >
+                        <img className="editLogo" src={Edit} alt="bin" />
+                      </button>
+                      </div>
+                    </div>
+                  </div>
                   </div>
                   </div>
                 );
@@ -83,9 +93,9 @@ class Hub extends React.Component {
           </div>
         </div>
       </div>
+      </div>
     );
   }
 }
 
 export default Hub;
-

@@ -1,0 +1,24 @@
+.BooksCard {
+    width: 300px;
+}
+
+.bookSearchBtn {
+    margin: 0 auto;
+}
+
+.searchGroup {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.booksContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+.booksContainer * {
+    padding: 15px;
+}
