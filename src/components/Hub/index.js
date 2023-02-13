@@ -9,10 +9,9 @@ class Hub extends React.Component {
     newItem: "",
     list: [],
   };
-
   //  Changing the state
   updateInput = (key, value) => {
-    this.setState({ [key]: value });
+    this.setState({ newItem: value });
   };
 
   addNote = () => {
@@ -37,9 +36,9 @@ class Hub extends React.Component {
     this.setState({ list: updatedNotesList });
   };
 
-  editNote = (value) => {
-    // this.setState figure out how to edit the note
-  };
+  editNote = () => {
+    // TBC
+  }
 
   render() {
     return (
@@ -55,44 +54,48 @@ class Hub extends React.Component {
               onChange={(e) => this.updateInput("newItem", e.target.value)}
             />
             <button className="add-btn btn-success" onClick={this.addNote}>
-              <i class="delete-icon"> + </i>
+              <i className="delete-icon"> + </i>
             </button>
 
-        <div className="outerWrap">
-            <ul className="notesContainer">
-              {this.state.list.map((item) => {
-                return (
-                  <div className="container">
-                    <div className="NotesRow">
-                  <div class="card">
-                    <div class="card-body">
-                      <p key={item.id}>{item.value} </p>
-                      <div className="buttonsContainer">
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => this.deleteNote(item.id)}
-                      >
-                        <img className="binLogo" src={Bin} alt="bin" />
+            <div className="outerWrap">
+              <ul className="notesContainer">
+                {this.state.list.map((item) => {
+                  return (
+                    <div className="container">
+                      <div className="NotesRow">
+                        <div className="card">
+                          <div className="card-body">
+                            <p key={item.id}>{item.value} </p>
+                            <div className="buttonsContainer">
+                              <button
+                                className="btn btn-danger"
+                                onClick={() => this.deleteNote(item.id)}
+                              >
+                                <img className="binLogo" src={Bin} alt="bin" />
 
-                        {/* <i class="delete-icon">x</i> */}
-                      </button>
-                      <button
-                        className="btn btn-warning"
-                        onClick={() => this.editNote(item.value)}
-                      >
-                        <img className="editLogo" src={Edit} alt="bin" />
-                      </button>
+                                {/* <i className="delete-icon">x</i> */}
+                              </button>
+                              <button
+                                className="btn btn-warning"
+                                onClick={() => this.editNote(item.value)}
+                              >
+                                <img
+                                  className="editLogo"
+                                  src={Edit}
+                                  alt="bin"
+                                />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  </div>
-                  </div>
-                );
-              })}
-            </ul>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     );
   }
