@@ -1,0 +1,16 @@
+.studentHubTitle {
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+.containerHub {
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.binLogo {
+    width: 20px;
+}
