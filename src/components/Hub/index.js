@@ -38,15 +38,15 @@ class Hub extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="studentHubTitle">To-do List</h1>
+        <h1 className="studentHubTitle">My Notes</h1>
         <div className="containerHub">
+        <div className="notesContainer"></div>
           <div
           >
-            Add a new Task...
-            <br />
-            <input
+            <textarea
+              className="notesInputText"
               type="text"
-              placeholder="Enter new task"
+              placeholder="Type your note here..."
               value={this.state.newItem}
               onChange={(e) => this.updateInput("newItem", e.target.value)}
             />
@@ -61,16 +61,20 @@ class Hub extends React.Component {
             <ul>
               {this.state.list.map((item) => {
                 return (
-                  <li key={item.id}>
-                    {item.value}
+                  <div class="card">
+  <div class="card-body">
+        <p key={item.id} >
+                    {item.value} </p>
                     <button
                       className="btn btn-danger"
                       onClick={() => this.deleteTask(item.id)}
                     >
+                      
                       <img className="binLogo" src={Bin} alt="bin" />
                       {/* <i class="delete-icon">x</i> */}
                     </button>
-                  </li>
+                  </div>
+                  </div>
                 );
               })}
             </ul>

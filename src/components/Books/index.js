@@ -3,13 +3,10 @@ import axios from "axios"
 
 function Books() {
 
+const input = JSON.stringify("Dracula");
 const options =  {
   method: 'GET',
-  url: 'https://hapi-books.p.rapidapi.com/nominees/romance/2020',
-  headers: {
-    'X-RapidAPI-Key': '4b0f065569mshd328a2a1a34d744p1e6b38jsnff01d51dcc7e',
-    'X-RapidAPI-Host': 'hapi-books.p.rapidapi.com'
-  }
+  url: 'https://www.googleapis.com/books/v1/volumes?q=' + input + 'lite&key=AIzaSyC0YC5pzrMGPGFPPY7JJ_3t60E3hFwtC8k',
 };
 axios.request(options).then(function (response) {
 	console.log(response.data);
@@ -17,8 +14,29 @@ axios.request(options).then(function (response) {
 }).catch(function (error) {
 	console.error(error);
 });
+
+// function getInput (event) {
+//     const input = event.target.value;
+// }
+
+// function getInput (event) {
+//     event.PreventDefault()
+
+// }
   return (
-    <div><button onClick={Books}>Click Me!</button></div>
+
+<div>
+            {/* <h1>Search here</h1>
+              <form onSubmit={getInput}>
+                            <div class="form-group"></div>
+              <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder=""/>
+          <button onClick={getInput}>Search</button>
+          </form>
+
+        </div> */}
+                <button onClick={Books}>Click Me!</button>
+        </div>
   )
 }
 

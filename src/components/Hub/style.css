@@ -14,3 +14,18 @@
 .binLogo {
     width: 20px;
 }
+
+.notesContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    width: 200px;
+}
+
+.notesInputText {
+    width: 400px;
+    height: 200px;
+    resize: none;
+}

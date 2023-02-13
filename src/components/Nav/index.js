@@ -27,13 +27,13 @@ function Nav() {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="todo"
+                  to="notes"
                   end
                   classNameName={({ isActive }) =>
                     isActive ? "nav-link active" : "nav-link"
                   }
                 >
-                  To-do List
+                  Notes
                 </NavLink>
               </li>
               <li className="nav-item">
