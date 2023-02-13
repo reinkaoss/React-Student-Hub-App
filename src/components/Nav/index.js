@@ -18,7 +18,7 @@ function Nav() {
                 <NavLink
                   to="/"
                   end
-                  classNameName={({ isActive }) =>
+                  className={({ isActive }) =>
                     isActive ? "nav-link active" : "nav-link"
                   }
                 >
@@ -29,7 +29,7 @@ function Nav() {
                 <NavLink
                   to="notes"
                   end
-                  classNameName={({ isActive }) =>
+                  className={({ isActive }) =>
                     isActive ? "nav-link active" : "nav-link"
                   }
                 >
@@ -40,7 +40,7 @@ function Nav() {
               <NavLink
                   to="books"
                   end
-                  classNameName={({ isActive }) =>
+                  className={({ isActive }) =>
                     isActive ? "nav-link active" : "nav-link"
                   }
                 >
@@ -51,7 +51,7 @@ function Nav() {
                 <NavLink
                   to="about"
                   end
-                  classNameName={({ isActive }) =>
+                  className={({ isActive }) =>
                     isActive ? "nav-link active" : "nav-link"
                   }
                 >
