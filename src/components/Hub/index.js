@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css"
 import Bin from "./images/recycle-bin.png"
+import { v4 as uuidv4 } from 'uuid';
 
 class Hub extends React.Component {
   state = {
@@ -8,14 +9,15 @@ class Hub extends React.Component {
     list: [],
   };
 
+
   //  Changing the state
   updateInput = (key, value) => {
     this.setState({ [key]: value });
   };
 
-  addTask = () => {
+  addNote = () => {
     const newItem = {
-      id: 1 + Math.random(),
+      id: uuidv4(),
       value: this.state.newItem.slice(),
     };
 
@@ -29,7 +31,7 @@ class Hub extends React.Component {
   };
 
   // Using filter to delete item based on ID
-  deleteTask = (id) => {
+  deleteNote = (id) => {
     const updatedTasksList = this.state.list.filter((item) => item.id !== id);
 
     this.setState({ list: updatedTasksList });
@@ -52,7 +54,7 @@ class Hub extends React.Component {
             />
             <button
               className="add-btn btn-success"
-              onClick={this.addTask}
+              onClick={this.addNote}
               disabled={!this.state.newItem.length}
             >
               <i class="delete-icon"> + </i>
@@ -67,7 +69,7 @@ class Hub extends React.Component {
                     {item.value} </p>
                     <button
                       className="btn btn-danger"
-                      onClick={() => this.deleteTask(item.id)}
+                      onClick={() => this.deleteNote(item.id)}
                     >
                       
                       <img className="binLogo" src={Bin} alt="bin" />
