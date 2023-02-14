@@ -9,6 +9,7 @@ class Hub extends React.Component {
     newItem: "",
     list: [],
   };
+
   //  Changing the state
   updateInput = (key, value) => {
     this.setState({ newItem: value });
@@ -36,8 +37,23 @@ class Hub extends React.Component {
     this.setState({ list: updatedNotesList });
   };
 
+  getLocalStorage() {
+    const storage = localStorage.getItem("list")
+    if (storage != null) {
+      this.setState({ list: JSON.parse(storage) });
+      console.log(storage);
+  }
+  }
+
+  setLocalStorage() {
+    if (this.list !== this.state.list) {
+      localStorage.setItem("list", JSON.stringify(this.state.list));
+    }
+  }
+
   editNote = () => {
-    // TBC
+   let newItem
+
   }
 
   render() {

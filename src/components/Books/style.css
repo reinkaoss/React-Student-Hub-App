@@ -22,3 +22,28 @@
 .booksContainer * {
     padding: 15px;
 }
+
+.buttonDiv {
+    display: flex;
+    margin-top: 20px;
+}
+
+
+/* Card styling */
+
+.card-title {
+    display: flex;
+    font-weight: bolder;
+    margin-right: 5px;
+    text-align: center;
+}
+.card-img-top {
+    box-shadow: -1.5rem 0 1rem gray;
+}
+
+.favorite, .btn-warning {
+    width: 30px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
