@@ -41,9 +41,11 @@
     box-shadow: -1.5rem 0 1rem gray;
 }
 
-.favorite, .btn-warning {
+.favorite, .favButton {
     width: 30px;
     padding: 0 !important;
     margin: 0 !important;
+    
 }
+
 

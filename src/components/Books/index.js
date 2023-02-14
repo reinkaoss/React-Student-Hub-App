@@ -63,7 +63,7 @@ function Books() {
             {search.items && search.items.length > 0 && (
               <h4 className="card-title">{search.items[0].volumeInfo.title} </h4>
             )}
-            <button className="btn btn-warning"
+            <button className="btn btn-warning favButton"
               // onClick={}
             >
               <img className="favorite" src={FavStar} alt="bin" />
@@ -89,7 +89,7 @@ function Books() {
             {search.items && search.items.length > 1 && (
               <h4 className="card-title">{search.items[1].volumeInfo.title} </h4>
             )}
-            <button className="btn btn-warning"
+            <button className="btn btn-warning favButton"
               // onClick={}
             >
               <img className="favorite" src={FavStar} alt="bin" />
@@ -115,7 +115,7 @@ function Books() {
             {search.items && search.items.length > 2 && (
               <h4 className="card-title">{search.items[2].volumeInfo.title} </h4>
             )}
-            <button className="btn btn-warning"
+            <button className="btn btn-warning favButton"
               // onClick={}
             >
               <img className="favorite" src={FavStar} alt="bin" />
@@ -141,7 +141,7 @@ function Books() {
             {search.items && search.items.length > 3 && (
               <h4 className="card-title">{search.items[3].volumeInfo.title}</h4>
             )}
-             <button className="btn btn-warning"
+             <button className="btn btn-warning favButton"
               // onClick={}
             >
               <img className="favorite" src={FavStar} alt="bin" />

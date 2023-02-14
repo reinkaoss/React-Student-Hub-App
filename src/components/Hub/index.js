@@ -24,6 +24,10 @@ class Hub extends React.Component {
     // copy list of tasks, using [...] to get all items
     const list = [...this.state.list, newItem];
 
+    if(list.length > 3) {
+      console.log("test");
+    }
+
     this.setState({
       list,
       newItem: "",
@@ -37,23 +41,23 @@ class Hub extends React.Component {
     this.setState({ list: updatedNotesList });
   };
 
-  getLocalStorage() {
+  // Adding localstorage, creating the key list to add the const list
+  componentDidMount() {
     const storage = localStorage.getItem("list")
     if (storage != null) {
       this.setState({ list: JSON.parse(storage) });
       console.log(storage);
   }
   }
-
-  setLocalStorage() {
+// CHeck if localstorage isnt empty 
+  componentDidUpdate() {
     if (this.list !== this.state.list) {
       localStorage.setItem("list", JSON.stringify(this.state.list));
     }
   }
 
-  editNote = () => {
-   let newItem
-
+  editNote = (value) => {
+    console.log(value);
   }
 
   render() {
@@ -73,12 +77,12 @@ class Hub extends React.Component {
               <i className="delete-icon"> + </i>
             </button>
 
-            <div className="outerWrap">
               <ul className="notesContainer">
                 {this.state.list.map((item) => {
                   return (
                     <div className="container">
-                      <div className="NotesRow">
+                      <div className="NotesRow row">
+                        <div className="col-lg-4">
                         <div className="card">
                           <div className="card-body">
                             <p key={item.id}>{item.value} </p>
@@ -88,8 +92,6 @@ class Hub extends React.Component {
                                 onClick={() => this.deleteNote(item.id)}
                               >
                                 <img className="binLogo" src={Bin} alt="bin" />
-
-                                {/* <i className="delete-icon">x</i> */}
                               </button>
                               <button
                                 className="btn btn-warning"
@@ -104,12 +106,12 @@ class Hub extends React.Component {
                             </div>
                           </div>
                         </div>
+                        </div>
                       </div>
                     </div>
                   );
                 })}
               </ul>
-            </div>
           </div>
         </div>
       </div>

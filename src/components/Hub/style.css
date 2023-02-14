@@ -1,3 +1,10 @@
+* {
+    box-sizing: content-box;
+}
+
+body {
+    max-width: 100%;
+}
 .studentHubTitle {
     text-align: center;
     font-weight: bolder;
@@ -11,8 +18,8 @@
     border-radius: 5px;
 }
 
-.binLogo, .editLogo  {
-    width: 20px;
+.binLogo, .editLogo {
+    width: 30px;
 }
 
 
@@ -22,18 +29,21 @@
 }
 
 .card {
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 250px;
     background-color: bisque !important;
+    border-radius: 35px;
 }
 
 .notesInputText {
     width: 400px;
     height: 200px;
     resize: none;
+    border-radius: 20px;
 }
 
 .buttonsContainer {
+    margin-top: 100px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -42,4 +52,20 @@
 
 .NotesRow {
     max-width: max-content;
+}
+
+.add-btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+textarea::placeholder {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     */
+     margin: 0 auto;
 }
