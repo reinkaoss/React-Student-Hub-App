@@ -49,7 +49,7 @@ function Nav() {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="about"
+                  to="contact"
                   end
                   className={({ isActive }) =>
                     isActive ? "nav-link active" : "nav-link"

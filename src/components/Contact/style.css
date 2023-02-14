@@ -5,3 +5,10 @@
     align-items: center;
     margin: 0 auto;
 }
+
+.contactWrapper {
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    max-width: 600px;
+}

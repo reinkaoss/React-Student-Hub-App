@@ -25,7 +25,7 @@ class Hub extends React.Component {
     const list = [...this.state.list, newItem];
 
     if(list.length > 3) {
-      console.log("test");
+      console.log("Test2");
     }
 
     this.setState({
@@ -58,6 +58,7 @@ class Hub extends React.Component {
 
   editNote = (value) => {
     console.log(value);
+    console.log(this.value);
   }
 
   render() {
@@ -95,7 +96,7 @@ class Hub extends React.Component {
                               </button>
                               <button
                                 className="btn btn-warning"
-                                onClick={() => this.editNote(item.value)}
+                                onClick={() => this.editNote(this.value)}
                               >
                                 <img
                                   className="editLogo"
