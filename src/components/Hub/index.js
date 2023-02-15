@@ -8,18 +8,19 @@ function Hub() {
   const [newItem, setNewItem] = useState("");
   const [list, setList] = useState([]);
 
-
-// CHeck if localstorage isnt empty 
+  // Load the list from local storage when the component mounts
   useEffect(() => {
-    const storage = localStorage.getItem("list");
-    if (storage != null) {
-      setList(JSON.parse(storage));
+    const storedList = JSON.parse(localStorage.getItem("list"));
+    if (storedList) {
+      setList(storedList);
     }
   }, []);
- // Adding localstorage, creating the key list to add the const list
+
+  // Save the list to local storage whenever it changes
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
+
 
   //  Changing the state
   const updateInput = (value) => {
@@ -43,9 +44,16 @@ function Hub() {
     setList(updatedNotesList);
   };
 
-  const editNote = (id) => {
-    console.log(id);
+  const editNote = (id, editedValue) => {
+    const updatedNotesList = list.map((item) => {
+      if (item.id === id) {
+        return { id: item.id, value: editedValue };
+      }
+      return item;
+    });
+    setList(updatedNotesList);
   };
+  
 
   return (
     <div>
@@ -66,7 +74,6 @@ function Hub() {
           <ul className="notesContainer">
             {list.map((item) => {
               return (
-                <div className="container">
                   <div className="NotesRow row">
                     <div className="col-lg-4">
                       <div className="card">
@@ -94,7 +101,6 @@ function Hub() {
                       </div>
                     </div>
                   </div>
-                </div>
               );
             })}
           </ul>
