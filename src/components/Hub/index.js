@@ -1,117 +1,119 @@
-import React, { useState, useEffect } from "react";
+import React, { setState } from "react";
 import "./style.css";
 import Bin from "./images/recycle-bin.png";
 import Edit from "./images/edit.png";
 import { v4 as uuidv4 } from "uuid";
 
-function Hub() {
-  const [newItem, setNewItem] = useState("");
-  const [list, setList] = useState([]);
-
-  // Update local storage whenever the list state changes
-  useEffect(() => {
-    console.log(JSON.stringify(list.id));
-    localStorage.setItem("list", JSON.stringify(list));
-    
-  }, [list]);
-
-  // Load list from local storage when component is mounted
-  useEffect(() => {
-    // event.preventDefault()
-    const storage = JSON.parse(localStorage.getItem("list"));
-    if (storage) {
-      
-      setList(storage);
-    }
-  }, []);
-
+class Hub extends React.Component {
+  state = {
+    newItem: "",
+    list: [],
+  };
 
   //  Changing the state
-  const updateInput = (value) => {
-    setNewItem(value);
+  updateInput = (key, value) => {
+    this.setState({ [key]: value });
   };
 
-// adding new note
-  const addNote = () => {
-    const newItemObj = {
+  addNote = () => {
+    const newItem = {
       id: uuidv4(),
-      value: newItem,
+      value: this.state.newItem,
     };
- // concat list of tasks, to get all items
- const newList = list.concat(newItemObj);
- setList(newList);
- setNewItem("");
-  };
 
-  const deleteNote = (id) => {
-    const updatedNotesList = list.filter((item) => item.id !== id);
-    setList(updatedNotesList);
-  };
+    // copy list of tasks, using [...] to get all items
+    const list = [...this.state.list, newItem];
 
-  const editNote = (id, editedValue) => {
-    const updatedNotesList = list.map((item) => {
-      if (item.id === id) {
-        return { id: item.id, value: editedValue };
-      }
-      return item;
+    this.setState({
+      list,
+      newItem: "",
     });
-    setList(updatedNotesList);
+  };
+
+
+  // Using filter to delete item based on ID
+  deleteNote = (id) => {
+    const updatedNotesList = this.state.list.filter((item) => item.id !== id);
+
+    this.setState({ list: updatedNotesList });
+  };
+
+  // Check if the localstorage isn't emptyT
+  componentDidMount() {
+    const storage = localStorage.getItem("list")
+    if (storage != null) {
+      this.setState({ list: JSON.parse(storage) });
+      console.log(storage);
+  }
+  }
+  // Update with the list 
+  componentDidUpdate() {
+    if (this.list !== this.state.list) {
+      localStorage.setItem("list", JSON.stringify(this.state.list));
+    }
+  }
+
+
+  editNote = (value) => {
+    // this.setState figure out how to edit the note
   };
   
 
-  return (
-    <div>
-      <h1 className="studentHubTitle">My Notes</h1>
-      <div className="containerHub">
-        <div>
-          <textarea
-            className="notesInputText"
-            type="text"
-            placeholder="Type your note here..."
-            value={newItem}
-            onChange={(e) => updateInput(e.target.value)}
-          />
-          <button className="add-btn btn-success" onClick={addNote}>
-            <i className="delete-icon"> + </i>
-          </button>
+  render() {
+    return (
+      <div>
+        <h1 className="studentHubTitle">My Notes</h1>
+        <div className="containerHub">
+          <div>
+            <textarea
+              className="notesInputText"
+              type="text"
+              placeholder="Type your note here..."
+              value={this.state.newItem}
+              onChange={(e) => this.updateInput("newItem", e.target.value)}
+            />
+            <button className="add-btn btn-success" onClick={this.addNote}>
+              <i class="delete-icon"> + </i>
+            </button>
 
-          <ul className="notesContainer">
-            {list.map((item) => {
-              return (
-                  <div className="NotesRow row">
-                    <div className="col-lg-4">
-                      <div className="card">
-                        <div className="card-body">
-                          <p key={item.id}>{item.value} </p>
-                          <div className="buttonsContainer">
-                            <button
-                              className="btn btn-danger"
-                              onClick={() => deleteNote(item.id)}
-                            >
-                              <img className="binLogo" src={Bin} alt="bin" />
-                            </button>
-                            <button
-                              className="btn btn-warning"
-                              onClick={() => editNote(item.id)}
-                            >
-                              <img
-                                className="editLogo"
-                                src={Edit}
-                                alt="bin"
-                              />
-                            </button>
-                          </div>
-                        </div>
+        <div className="outerWrap">
+            <ul className="notesContainer">
+              {this.state.list.map((item) => {
+                return (
+                  <div className="container">
+                    <div className="NotesRow">
+                  <div class="card">
+                    <div class="card-body">
+                      <p key={item.id}>{item.value} </p>
+                      <div className="buttonsContainer">
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => this.deleteNote(item.id)}
+                      >
+                        <img className="binLogo" src={Bin} alt="bin" />
+
+                        {/* <i class="delete-icon">x</i> */}
+                      </button>
+                      <button
+                        className="btn btn-warning"
+                        onClick={() => this.editNote(item.value)}
+                      >
+                        <img className="editLogo" src={Edit} alt="bin" />
+                      </button>
                       </div>
                     </div>
                   </div>
-              );
-            })}
-          </ul>
+                  </div>
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default Hub;
