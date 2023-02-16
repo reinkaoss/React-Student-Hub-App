@@ -62,7 +62,7 @@ class Hub extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="studentHubTitle">My Notes</h1>
+        <h2 className="studentHubTitle">My Notes</h2>
         <div className="containerHub">
           <div>
             <textarea
