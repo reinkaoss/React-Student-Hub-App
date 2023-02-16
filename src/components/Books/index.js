@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
 import FavStar from "./images/favorite.png"
+// const fs = require('fs');
+const jsonData= {"name":"John", "age":30, "car":null};
+const jsonString = JSON.stringify(jsonData);
 
 function Books() {
   const [books, setBooks] = useState("");
@@ -12,8 +15,13 @@ function Books() {
     setBooks(books);
   }
 
+  // fs.writeFile("./foo.json", jsonString, 'utf8', function (err) {
+  //     if (err) {
+  //         return console.log(err);
+  //     }
+  //     console.log("file saved!");
+  // }); 
   
-
   function BooksAPI(event) {
     event.preventDefault();
     axios
@@ -25,6 +33,7 @@ function Books() {
       .then((response) => {
         // console.log(response.data);
         setSearch(response.data);
+
         console.log(search);
       })
       .catch(function (error) {
@@ -66,7 +75,7 @@ function Books() {
               <h4 className="card-title">{search.items[0].volumeInfo.title} </h4>
             )}
             <button className="btn btn-warning favButton"
-              // onClick={}
+              // onClick={saveBook}
             >
               <img className="favorite" src={FavStar} alt="bin" />
             </button>
@@ -161,3 +170,6 @@ function Books() {
 }
 
 export default Books;
+
+
+

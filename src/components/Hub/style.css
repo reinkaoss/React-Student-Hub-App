@@ -3,7 +3,9 @@
 }
 
 body {
-    max-width: 100%;
+    box-sizing: content-box;
+    width: 100%;
+    /* overflow: hidden; */
 }
 .studentHubTitle {
     text-align: center;
@@ -70,3 +72,39 @@ textarea::placeholder {
      */
      margin: 0 auto;
 }
+
+@media only screen and (max-width: 600px) {
+    .notesInputText, .card {
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+.notesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .buttonsContainer {
+            margin-top: 0;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .binLogo, .editLogo {
+             width: 10px;
+            }
+          }
+
+          @media only screen and (max-width: 600px) {
+            .buttonsContainer > button {
+                 /* width: 5px; */
+                }
+              }
+
+          
