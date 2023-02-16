@@ -65,11 +65,11 @@ function Nav() {
         </div>
       </div>
       </div>
-      <footer class="text-center text-lg-start footer">
-  <div class="text-center p-3">
+      <footer className="text-center text-lg-start footer">
+  <div className="text-center p-3">
     <p> © 2023 Copyright:</p>
    
-    <a class="text-dark" href="https://mdbootstrap.com/">Our Githubs here</a>
+    <a className="text-dark" href="https://mdbootstrap.com/">Our Githubs here</a>
   </div>
 </footer>
     </div>

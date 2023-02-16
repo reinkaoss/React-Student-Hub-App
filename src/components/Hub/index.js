@@ -8,18 +8,22 @@ function Hub() {
   const [newItem, setNewItem] = useState("");
   const [list, setList] = useState([]);
 
-  // Load the list from local storage when the component mounts
+  // Update local storage whenever the list state changes
   useEffect(() => {
-    const storedList = JSON.parse(localStorage.getItem("list"));
-    if (storedList) {
-      setList(storedList);
+    console.log(JSON.stringify(list.id));
+    localStorage.setItem("list", JSON.stringify(list));
+    
+  }, [list]);
+
+  // Load list from local storage when component is mounted
+  useEffect(() => {
+    // event.preventDefault()
+    const storage = JSON.parse(localStorage.getItem("list"));
+    if (storage) {
+      
+      setList(storage);
     }
   }, []);
-
-  // Save the list to local storage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(list));
-  }, [list]);
 
 
   //  Changing the state

@@ -33,8 +33,8 @@ function Books() {
       .then((response) => {
         // console.log(response.data);
         setSearch(response.data);
-
-        console.log(search);
+        console.log(response);
+        // console.log(search);
       })
       .catch(function (error) {
         console.error(error);
