@@ -4,7 +4,7 @@
 
 body {
     box-sizing: content-box;
-    /* width: 100%; */
+    width: 100%;
     /* overflow: hidden; */
 }
 .studentHubTitle {
@@ -29,6 +29,7 @@ body {
 .notesContainer {
     display: flex;
     flex-direction: row;
+    height: 50vw;
 }
 
 .card {

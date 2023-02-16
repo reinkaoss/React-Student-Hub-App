@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./style.css";
 import FavStar from "./images/favorite.png"
-// const fs = require('fs');
-const jsonData= {"name":"John", "age":30, "car":null};
-const jsonString = JSON.stringify(jsonData);
 
 function Books() {
   const [books, setBooks] = useState("");
@@ -15,26 +12,18 @@ function Books() {
     setBooks(books);
   }
 
-  // fs.writeFile("./foo.json", jsonString, 'utf8', function (err) {
-  //     if (err) {
-  //         return console.log(err);
-  //     }
-  //     console.log("file saved!");
-  // }); 
-  
   function BooksAPI(event) {
     event.preventDefault();
     axios
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
           books +
-          "lite&key=AIzaSyC0YC5pzrMGPGFPPY7JJ_3t60E3hFwtC8k&maxResults=4"
+          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=1"
       )
       .then((response) => {
-        // console.log(response.data);
-        setSearch(response.data);
         console.log(response);
-        // console.log(search);
+        setSearch(response.data);
+        console.log(search);
       })
       .catch(function (error) {
         console.error(error);

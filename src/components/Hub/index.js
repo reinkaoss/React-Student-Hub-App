@@ -73,7 +73,7 @@ class Hub extends React.Component {
               onChange={(e) => this.updateInput("newItem", e.target.value)}
             />
             <button className="add-btn btn-success" onClick={this.addNote}>
-              <i class="delete-icon"> + </i>
+              <i className="delete-icon"> + </i>
             </button>
 
         <div className="outerWrap">
@@ -82,8 +82,8 @@ class Hub extends React.Component {
                 return (
                   <div className="container">
                     <div className="NotesRow">
-                  <div class="card">
-                    <div class="card-body">
+                  <div className="card">
+                    <div className="card-body">
                       <p key={item.id}>{item.value} </p>
                       <div className="buttonsContainer">
                       <button
@@ -94,12 +94,12 @@ class Hub extends React.Component {
 
                         {/* <i class="delete-icon">x</i> */}
                       </button>
-                      <button
+                      {/* <button
                         className="btn btn-warning"
                         onClick={() => this.editNote(item.value)}
                       >
                         <img className="editLogo" src={Edit} alt="bin" />
-                      </button>
+                      </button> */}
                       </div>
                     </div>
                   </div>
