@@ -59,11 +59,8 @@ class Hub extends React.Component {
   render() {
     return (
       <div>
-
         <h1 className="studentHubTitle">My Notes</h1>
         <div className="container Hub">
-        <h2 className="studentHubTitle">My Notes</h2>
-        <div className="containerHub">
           <div>
             <textarea
               className="notesInputText"
@@ -73,8 +70,9 @@ class Hub extends React.Component {
               onChange={(e) => this.updateInput("newItem", e.target.value)}
             />
             <button className="add-btn btn-success" onClick={this.addNote}>
-              <i className="delete-icon"> + </i>
+              <i class="delete-icon"> + </i>
             </button>
+
             <div className="outerWrap">
               <ul className="notesContainer">
                 {this.state.list.map((item) => {
@@ -106,30 +104,6 @@ class Hub extends React.Component {
                             </div>
                           </div>
                         </div>
-        <div className="outerWrap">
-            <ul className="notesContainer">
-              {this.state.list.map((item) => {
-                return (
-                  <div className="container">
-                    <div className="NotesRow">
-                  <div className="card">
-                    <div className="card-body">
-                      <p key={item.id}>{item.value} </p>
-                      <div className="buttonsContainer">
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => this.deleteNote(item.id)}
-                      >
-                        <img className="binLogo" src={Bin} alt="bin" />
-
-                        {/* <i class="delete-icon">x</i> */}
-                      </button>
-                      {/* <button
-                        className="btn btn-warning"
-                        onClick={() => this.editNote(item.value)}
-                      >
-                        <img className="editLogo" src={Edit} alt="bin" />
-                      </button> */}
                       </div>
                     </div>
                   );
