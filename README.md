@@ -39,6 +39,6 @@ Contributions are welcome! If you find a bug or want to suggest a new feature, p
 ## Team Members
 * Damien N. Ayine|[Damiennsoh](https://github.com/Damiennsoh)
 * Samuel Oluyomi
-* Victor
+* Victor Biscio
 * Victoria Meguille
   
