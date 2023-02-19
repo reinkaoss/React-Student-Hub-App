@@ -41,4 +41,5 @@ Contributions are welcome! If you find a bug or want to suggest a new feature, p
 * Samuel Oluyomi
 * Victor Biscio
 * Victoria Meguille
+* 
   
