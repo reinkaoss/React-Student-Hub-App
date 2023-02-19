@@ -33,7 +33,7 @@ form {
 }
 
 .submitBtn:hover {
-    background-color: #3e8e41;
+    background-color: #0e3b43;
 }
 
 .success {
@@ -41,3 +41,9 @@ form {
     color: lightseagreen;
     margin-top: 15px;
 }
+
+@media (max-width: 767px) {
+    input[type="text"], textarea {
+        width: 250px;
+      }
+  }
