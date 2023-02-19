@@ -18,6 +18,7 @@ form {
     border-radius: 5px;
     width: 500px;
     font-size: 16px;
+    border-color: #420dd1;
   }
   
 .submitBtn {
@@ -33,7 +34,7 @@ form {
 }
 
 .submitBtn:hover {
-    background-color: #3e8e41;
+    background-color: #420dd1;
 }
 
 .success {
