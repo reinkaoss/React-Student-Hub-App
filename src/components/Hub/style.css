@@ -1,3 +1,4 @@
+
 * {
     box-sizing: content-box;
 }
@@ -10,27 +11,35 @@ body {
     height:100%;
     /* overflow: hidden; */
 }
+
 .studentHubTitle {
-    text-align: center;
-    font-weight: bolder;
-    margin-top: 20px;
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 20px;
 }
 
-.containerHub {
-    font-size: 20px;
-    text-align: center;
-    font-weight: bolder;
-    margin-top: 20px;
-    border-radius: 5px;
+.Hub {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
-.binLogo, .editLogo {
-    width: 30px;
-}
-
-
-
+.binLogo,
+.editLogo {
+  
 .notesContainer {
+
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  width: 400px;
+  height: 250px;
+  background-color: bisque !important;
+  border-radius: 35px;
     display: flex;
     flex-direction: row;
     height: 50vw;
@@ -48,72 +57,68 @@ body {
 }
 
 .notesInputText {
-    width: 400px;
-    height: 200px;
-    resize: none;
-    border-radius: 20px;
+  width: 400px;
+  height: 200px;
+  resize: none;
+  border-radius: 20px;
 }
 
 .buttonsContainer {
-    margin-top: 100px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: flex-end;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .NotesRow {
-    max-width: max-content;
+  max-width: max-content;
 }
 
 .add-btn {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-bottom: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
 }
 
 textarea::placeholder {
-    /* display: flex;
+  /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
      */
-     margin: 0 auto;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 600px) {
-    .notesInputText, .card {
-      width: 200px;
-      height: 100px;
-      overflow: hidden;
-    }
+  .notesInputText,
+  .card {
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
   }
+}
 
-  @media only screen and (max-width: 600px) {
-.notesContainer {
+@media only screen and (max-width: 600px) {
+  .notesContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
   }
+}
 
-  @media only screen and (max-width: 600px) {
-    .buttonsContainer {
-            margin-top: 0;
-        }
-      }
+@media only screen and (max-width: 600px) {
+  .buttonsContainer {
+    margin-top: 0;
+  }
+}
 
-      @media only screen and (max-width: 600px) {
-        .binLogo, .editLogo {
-             width: 10px;
-            }
-          }
+@media only screen and (max-width: 600px) {
+  .binLogo,
+  .editLogo {
+    width: 10px;
+  }
+}
 
-          @media only screen and (max-width: 600px) {
-            .buttonsContainer > button {
-                 /* width: 5px; */
-                }
-              }
 
-          

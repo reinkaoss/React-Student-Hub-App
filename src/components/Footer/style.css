@@ -1,0 +1,46 @@
+footer {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+    bottom: 0;
+  }
+  
+  footer h5 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  footer p {
+    margin-bottom: 0;
+  }
+  
+  footer ul li a {
+    color: #0e3b43 !important;
+    
+  }
+
+ a.foot-link {
+    text-decoration: none;
+  }
+  
+  p.copy {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    footer {
+      padding: 30px 0;
+    }
+    
+    footer h5 {
+      font-size: 16px;
+    }
+    
+    footer ul li {
+      margin-bottom: 10px;
+    }
+  }
+  
