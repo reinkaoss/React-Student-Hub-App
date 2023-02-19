@@ -14,8 +14,12 @@ a.logo {
   color: #3e8e41 !important;
 }
 
+
 .bg-color {
   background-color: #a3bbad;
+
+.col-3 {
+    padding: 0 !important;
 }
 
 @media (max-width: 767px) {
@@ -23,3 +27,47 @@ a.logo {
     margin-top: 10px;
   }
 }
+
+
+  @media only screen and (max-width: 600px) {
+    .navbar {
+      justify-content: center !important;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .title, .col-9 {
+    padding: 0;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .navRow, .landingPage {
+    margin: 0;
+    padding: 0;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .footer {
+        z-index: 100;
+    }
+  }
+ 
+
+  @media only screen and (max-width: 600px) {
+    .title, h1 {
+      display: inline-grid;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      align-content: center;
+      font-size: 1.8rem !important;
+    }
+  }
+
+
+
+
+  
+

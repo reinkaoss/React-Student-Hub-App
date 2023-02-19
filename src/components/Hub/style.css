@@ -1,3 +1,17 @@
+
+* {
+    box-sizing: content-box;
+}
+
+body {
+    box-sizing: content-box;
+    width: 100%;
+    margin:0;
+    padding:0;
+    height:100%;
+    /* overflow: hidden; */
+}
+
 .studentHubTitle {
   text-align: center;
   font-weight: bolder;
@@ -18,6 +32,7 @@
 }
 
 .notesContainer {
+
   display: flex;
   flex-direction: row;
 }
@@ -27,6 +42,20 @@
   height: 250px;
   background-color: bisque !important;
   border-radius: 35px;
+    display: flex;
+    flex-direction: row;
+    height: 50vw;
+}
+
+.card {
+    width: 400px;
+    height: 200px;
+    background-color: bisque !important;
+    border-radius: 35px;
+}
+
+.card-body {
+    border-radius: 35px;
 }
 
 .notesInputText {
