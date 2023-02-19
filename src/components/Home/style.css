@@ -1,0 +1,11 @@
+.home-text {
+    margin: 50px auto;
+    width: 700px;
+}
+
+@media (max-width: 767px) {
+    .home-text {
+        margin: 50px 15px;
+        width: auto;
+    }
+  }

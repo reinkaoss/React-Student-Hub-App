@@ -30,7 +30,6 @@ class Hub extends React.Component {
     });
   };
 
-
   // Using filter to delete item based on ID
   deleteNote = (id) => {
     const updatedNotesList = this.state.list.filter((item) => item.id !== id);
@@ -40,30 +39,28 @@ class Hub extends React.Component {
 
   // Check if the localstorage isn't emptyT
   componentDidMount() {
-    const storage = localStorage.getItem("list")
+    const storage = localStorage.getItem("list");
     if (storage != null) {
       this.setState({ list: JSON.parse(storage) });
       console.log(storage);
+    }
   }
-  }
-  // Update with the list 
+  // Update with the list
   componentDidUpdate() {
     if (this.list !== this.state.list) {
       localStorage.setItem("list", JSON.stringify(this.state.list));
     }
   }
 
-
   editNote = (value) => {
     // this.setState figure out how to edit the note
   };
-  
 
   render() {
     return (
       <div>
         <h1 className="studentHubTitle">My Notes</h1>
-        <div className="containerHub">
+        <div className="container Hub">
           <div>
             <textarea
               className="notesInputText"
@@ -76,41 +73,45 @@ class Hub extends React.Component {
               <i class="delete-icon"> + </i>
             </button>
 
-        <div className="outerWrap">
-            <ul className="notesContainer">
-              {this.state.list.map((item) => {
-                return (
-                  <div className="container">
-                    <div className="NotesRow">
-                  <div class="card">
-                    <div class="card-body">
-                      <p key={item.id}>{item.value} </p>
-                      <div className="buttonsContainer">
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => this.deleteNote(item.id)}
-                      >
-                        <img className="binLogo" src={Bin} alt="bin" />
+            <div className="outerWrap">
+              <ul className="notesContainer">
+                {this.state.list.map((item) => {
+                  return (
+                    <div className="container">
+                      <div className="NotesRow">
+                        <div className="card">
+                          <div className="card-body">
+                            <p key={item.id}>{item.value} </p>
+                            <div className="buttonsContainer">
+                              <button
+                                className="btn btn-danger"
+                                onClick={() => this.deleteNote(item.id)}
+                              >
+                                <img className="binLogo" src={Bin} alt="bin" />
 
-                        {/* <i class="delete-icon">x</i> */}
-                      </button>
-                      <button
-                        className="btn btn-warning"
-                        onClick={() => this.editNote(item.value)}
-                      >
-                        <img className="editLogo" src={Edit} alt="bin" />
-                      </button>
+                                {/* <i class="delete-icon">x</i> */}
+                              </button>
+                              <button
+                                className="btn btn-warning"
+                                onClick={() => this.editNote(item.value)}
+                              >
+                                <img
+                                  className="editLogo"
+                                  src={Edit}
+                                  alt="bin"
+                                />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  </div>
-                  </div>
-                );
-              })}
-            </ul>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     );
   }
