@@ -14,9 +14,11 @@
 
 .binLogo,
 .editLogo {
+  width: 20px;
+
+}
   
 .notesContainer {
-
   display: flex;
   flex-direction: row;
 }
@@ -24,7 +26,7 @@
 .card {
   width: 400px;
   height: 250px;
-  background-color: bisque !important;
+  background-color: #599d48 !important;
   border-radius: 35px;
     display: flex;
     flex-direction: row;
@@ -34,7 +36,7 @@
 .card {
     width: 400px;
     height: 200px;
-    background-color: bisque !important;
+    background-color: #599d48 !important;
     border-radius: 35px;
 }
 
