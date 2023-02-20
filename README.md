@@ -40,7 +40,11 @@ Contributions are welcome! If you find a bug or want to suggest a new feature, p
 * https://deploy-preview-18--react-student-hub.netlify.app/
   
   ## Screenshots
-* 
+* Home-Page:
+ ![image](https://github.com/reinkaoss/React-Student-Hub-App/blob/main/src/notes-home.jpg)
+
+ * Notes-Page:
+ ![image](https://github.com/reinkaoss/React-Student-Hub-App/blob/main/src/notes-page.jpg)
 ## Team Members
 * Damien N. Ayine|[Damiennsoh](https://github.com/Damiennsoh)|
 * Samuel Oluyomi|[hollusam](https://github.com/hollusam)|
