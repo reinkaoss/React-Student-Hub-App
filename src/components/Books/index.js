@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
-import FavStar from "./images/favorite.png"
+import FavStar from "./images/favorite.png";
 
 function Books() {
   const [books, setBooks] = useState("");
   const [search, setSearch] = useState("");
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
+
+  // add to localstorage for fav books
+  useEffect(() => {
+    const storedFavoriteBooks = localStorage.getItem("favoriteBooks");
+    if (storedFavoriteBooks) {
+      setFavoriteBooks(JSON.parse(storedFavoriteBooks));
+    }
+  }, []);
 
   function getBook(event) {
     const books = event.target.value;
@@ -18,17 +27,37 @@ function Books() {
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
           books +
-          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=1"
+          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=5"
       )
       .then((response) => {
-        console.log(response);
         setSearch(response.data);
-        console.log(search);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.error(error);
       });
   }
+// Get api response for favorite books
+  function saveBook() {
+    const newFavoriteBook = {
+      title: search.items[0].volumeInfo.title,
+      image: search.items[0].volumeInfo.imageLinks.thumbnail,
+      authors: search.items[0].volumeInfo.authors,
+    };
+// check if the Title isn't the same so the book isn't added twice
+    if (favoriteBooks.find((book) => book.title === newFavoriteBook.title)) {
+      return;
+    }
+
+    const updatedFavoriteBooks = [...favoriteBooks, newFavoriteBook];
+    setFavoriteBooks(updatedFavoriteBooks);
+
+    localStorage.setItem(
+      "favoriteBooks",
+      JSON.stringify(updatedFavoriteBooks)
+    );
+  }
+
   return (
     <div id="books">
       <form onSubmit={BooksAPI} />
@@ -46,7 +75,7 @@ function Books() {
       </div>
       <div className="buttonDiv">
         <button className="btn btn-success bookSearchBtn" onClick={BooksAPI}>
-          Click Me!
+          Find a book!
         </button>
       </div>
       <div className="booksContainer">
@@ -63,101 +92,33 @@ function Books() {
             {search.items && search.items.length > 0 && (
               <h4 className="card-title">{search.items[0].volumeInfo.title} </h4>
             )}
-            <button className="btn btn-warning favButton"
-              // onClick={saveBook}
-            >
-              <img className="favorite" src={FavStar} alt="bin" />
-            </button>
-            {search.items && search.items.length > 0 && (
+              {search.items && search.items.length > 0 && (
               <p className="card-text">
-                {search.items[0].volumeInfo.description}
+                {search.items[0].volumeInfo.authors}
               </p>
             )}
-          </div>
-        </div>
-
-        {/* Second Output */}
-        <div className="BooksCard">
-          {search.items && search.items.length > 1 && (
-            <img
-              className="card-img-top"
-              src={search.items[1].volumeInfo.imageLinks.thumbnail}
-              alt="test"
-            />
-          )}
-          <div className="card-body">
-            {search.items && search.items.length > 1 && (
-              <h4 className="card-title">{search.items[1].volumeInfo.title} </h4>
-            )}
-            <button className="btn btn-warning favButton"
-              // onClick={}
-            >
+            <button className="btn btn-warning favButton" onClick={saveBook}>
               <img className="favorite" src={FavStar} alt="bin" />
             </button>
-            {search.items && search.items.length > 1 && (
-              <p className="card-text">
-                {search.items[1].volumeInfo.description}
-              </p>
-            )}
+          
           </div>
         </div>
-
-        {/* Third Output */}
-        <div className="BooksCard">
-          {search.items && search.items.length > 2 && (
-            <img
-              className="card-img-top"
-              src={search.items[2].volumeInfo.imageLinks.thumbnail}
-              alt="test"
-            />
-          )}
-          <div className="card-body">
-            {search.items && search.items.length > 2 && (
-              <h4 className="card-title">{search.items[2].volumeInfo.title} </h4>
-            )}
-            <button className="btn btn-warning favButton"
-              // onClick={}
-            >
-              <img className="favorite" src={FavStar} alt="bin" />
-            </button>
-            {search.items && search.items.length > 2 && (
-              <p className="card-text">
-                {search.items[2].volumeInfo.description}
-              </p>
-            )}
-          </div>
         </div>
-
-        {/* Fourth Output */}
-        <div className="BooksCard">
-          {search.items && search.items.length > 3 && (
-            <img
-              className="card-img-top"
-              src={search.items[3].volumeInfo.imageLinks.thumbnail}
-              alt="test"
-            />
-          )}
-          <div className="card-body">
-            {search.items && search.items.length > 3 && (
-              <h4 className="card-title">{search.items[3].volumeInfo.title}</h4>
-            )}
-             <button className="btn btn-warning favButton"
-              // onClick={}
-            >
-              <img className="favorite" src={FavStar} alt="bin" />
-            </button>
-            {search.items && search.items.length > 3 && (
-              <p className="card-text">
-                {search.items[3].volumeInfo.description}
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
+        <div className="FavoriteBook">
+  <h2 className="favouriteTitle">Your Favorite Books</h2>
+  {favoriteBooks.map((book) => (
+    <div className="favBooksInner" key={book.title}>
+      <h5>{book.title}</h5>
+      <img src={book.image} alt={book.title} />
+      <p>{book.authors}</p>
     </div>
-  );
-}
+  ))}
+</div>
 
+        </div>
+  
+  )
+            }
 export default Books;
 
 

@@ -22,7 +22,7 @@ function Nav() {
                 Home
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink
                 to="notes"
                 end
@@ -33,7 +33,7 @@ function Nav() {
                 Notes
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink
                 to="books"
                 end

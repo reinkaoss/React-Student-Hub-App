@@ -36,10 +36,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Contributing
 Contributions are welcome! If you find a bug or want to suggest a new feature, please open an issue on the project's GitHub repository. If you want to contribute code, please fork the repository and create a pull request with your changes.
 
+  ## Deployed Link
+* https://deploy-preview-18--react-student-hub.netlify.app/
+  
+  ## Screenshots
+* 
 ## Team Members
 * Damien N. Ayine|[Damiennsoh](https://github.com/Damiennsoh)|
 * Samuel Oluyomi|[hollusam](https://github.com/hollusam)|
 * Victor Biscio|[reinkaoss](https://github.com/reinkaoss)|
 * Victoria Meguille
-* 
-  
