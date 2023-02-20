@@ -52,9 +52,6 @@ class Hub extends React.Component {
     }
   }
 
-  editNote = (value) => {
-    // this.setState figure out how to edit the note
-  };
 
   render() {
     return (
@@ -90,16 +87,6 @@ class Hub extends React.Component {
                                 <img className="binLogo" src={Bin} alt="bin" />
 
                                 {/* <i class="delete-icon">x</i> */}
-                              </button>
-                              <button
-                                className="btn btn-warning"
-                                onClick={() => this.editNote(item.value)}
-                              >
-                                <img
-                                  className="editLogo"
-                                  src={Edit}
-                                  alt="bin"
-                                />
                               </button>
                             </div>
                           </div>

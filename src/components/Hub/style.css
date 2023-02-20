@@ -109,4 +109,25 @@ textarea::placeholder {
   }
 }
 
+/* Favorites sections */
 
+.favBooksInner {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  align-items: center;
+  margin: 40px;
+}
+
+.FavoriteBook {
+  border: 1px solid darkgreen;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.favouriteTitle {
+  color: #0e3b43 !important;
+  font-weight: bolder;
+  margin: 10px;
+}
