@@ -27,10 +27,11 @@ function Books() {
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
           books +
-          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=1"
+          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=5"
       )
       .then((response) => {
         setSearch(response.data);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -91,14 +92,15 @@ function Books() {
             {search.items && search.items.length > 0 && (
               <h4 className="card-title">{search.items[0].volumeInfo.title} </h4>
             )}
-            <button className="btn btn-warning favButton" onClick={saveBook}>
-              <img className="favorite" src={FavStar} alt="bin" />
-            </button>
-            {search.items && search.items.length > 0 && (
+              {search.items && search.items.length > 0 && (
               <p className="card-text">
                 {search.items[0].volumeInfo.authors}
               </p>
             )}
+            <button className="btn btn-warning favButton" onClick={saveBook}>
+              <img className="favorite" src={FavStar} alt="bin" />
+            </button>
+          
           </div>
         </div>
         </div>

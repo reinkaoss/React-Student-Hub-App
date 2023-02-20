@@ -131,3 +131,8 @@ textarea::placeholder {
   font-weight: bolder;
   margin: 10px;
 }
+
+.activeNotes {
+  font-weight: bolder;
+  margin: 10px;
+}

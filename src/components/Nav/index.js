@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function Nav() {
   return (
       <nav className="navbar navbar-expand-md navbar-light bg-color">
-        <a className="navbar-brand logo" href="#">Student Hub</a>
+        <a className="navbar-brand logo" href="/">Student Hub</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -22,7 +22,7 @@ function Nav() {
                 Home
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink
                 to="notes"
                 end
@@ -33,7 +33,7 @@ function Nav() {
                 Notes
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink
                 to="books"
                 end
