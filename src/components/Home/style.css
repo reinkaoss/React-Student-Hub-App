@@ -54,5 +54,16 @@ a.home-btn:hover {
 @media (max-width: 767px) {
   .home-img p {
     font-size: 15px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .home-img h1 {
+    font-size: 45px !important;
+    margin-top: 5px;
+  }
+
+  a.home-btn {
+    margin-top: 20px;
   }
 }

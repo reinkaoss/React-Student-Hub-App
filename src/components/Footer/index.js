@@ -13,17 +13,17 @@ function Footer() {
       <div class="col-sm-3">
         <h5>Links</h5>
         <ul class="list-unstyled">
-          <li><a className='foot-link' href="#">Home</a></li>
-          <li><a className='foot-link' href="#">About</a></li>
-          <li><a className='foot-link' href="#">Contact</a></li>
+          <li><a className='foot-link' href="/">Home</a></li>
+          <li><a className='foot-link' href="notes">Notes</a></li>
+          <li><a className='foot-link' href="contact">Contact</a></li>
         </ul>
       </div>
       <div class="col-sm-3">
         <h5>Follow Us</h5>
         <ul class="list-unstyled">
-          <li><a className='foot-link' href="#">Facebook</a></li>
-          <li><a className='foot-link' href="#">Twitter</a></li>
-          <li><a className='foot-link' href="#">Instagram</a></li>
+          <li><a className='foot-link' href="https://www.facebook.com" target="_blank">Facebook</a></li>
+          <li><a className='foot-link' href="https://www.twitter.com" target="_blank">Twitter</a></li>
+          <li><a className='foot-link' href="https://www.instagram.com" target="_blank">Instagram</a></li>
         </ul>
       </div>
     </div>

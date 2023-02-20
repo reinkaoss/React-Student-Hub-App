@@ -21,7 +21,7 @@ footer {
   }
 
  a.foot-link {
-    text-decoration: none;
+    text-decoration: none !important;
   }
   
   p.copy {
