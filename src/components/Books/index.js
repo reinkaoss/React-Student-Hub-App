@@ -4,6 +4,7 @@ import "./style.css";
 import FavStar from "./images/favorite.png";
 import { BsBookmarkStar } from 'react-icons/bs';
 import { AiOutlineRead } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 function Books() {
   const [books, setBooks] = useState("");
@@ -127,7 +128,9 @@ function Books() {
         </div>
         <div className="FavoriteBook">
   <h2 className="favouriteTitle">Your Favorite Books</h2>
-  <button className="btn btn-success clearFavs" onClick={deleteFavorite}>Clear List</button>
+  <Link to="/books">
+          <button onClick={deleteFavorite} className="btn btn-primary btn-lg home-btn" href="/books" role="button">Clear List</button>
+  </Link>
   {favoriteBooks.map((book) => (
     <div className="favBooksInner" key={book.title}>
       <h5>{book.title}</h5>
