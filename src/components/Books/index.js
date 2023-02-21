@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
 import FavStar from "./images/favorite.png";
+import { BsBookmarkStar } from 'react-icons/bs';
 
 function Books() {
   const [books, setBooks] = useState("");
@@ -90,16 +91,19 @@ function Books() {
           )}
           <div className="card-body">
             {search.items && search.items.length > 0 && (
-              <h4 className="card-title">{search.items[0].volumeInfo.title} </h4>
+              <h4 className="card-title">{search.items[0].volumeInfo.title} 
+                    {" "}
+      <p onClick={saveBook} className="favorite"> <BsBookmarkStar />{" "}</p></h4>
             )}
               {search.items && search.items.length > 0 && (
               <p className="card-text">
                 {search.items[0].volumeInfo.authors}
               </p>
             )}
-            <button className="btn btn-warning favButton" onClick={saveBook}>
-              <img className="favorite" src={FavStar} alt="bin" />
-            </button>
+            {/* <button className="btn btn-warning favButton" onClick={saveBook}> */}
+              {/* <img className="favorite" src={FavStar} alt="bin" /> */}
+        
+            {/* </button> */}
           
           </div>
         </div>

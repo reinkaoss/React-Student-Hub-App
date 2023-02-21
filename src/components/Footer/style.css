@@ -33,6 +33,7 @@ footer {
   @media (max-width: 767px) {
     footer {
       padding: 30px 0;
+      text-align: center;
     }
     
     footer h5 {

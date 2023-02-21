@@ -35,14 +35,14 @@
     display: flex;
     font-weight: bolder;
     margin-right: 5px;
-    text-align: center;
+    text-align: left;
 }
 .card-img-top {
-    box-shadow: -1.5rem 0 1rem gray;
+    /* box-shadow: -1.5rem 0 1rem gray; */
 }
 
 .favorite, .favButton {
-    width: 30px;
+    width: 64px;
     padding: 0 !important;
     margin: 0 !important;
     
