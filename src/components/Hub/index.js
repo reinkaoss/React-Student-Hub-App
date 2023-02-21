@@ -65,7 +65,7 @@ class Hub extends React.Component {
       <p className="activeNotes">Number of active notes: {this.state.list.length} <GrNotes />{" "}</p>
     </h5>
         <div className="container Hub">
-          <div>
+          <div className="textInputDiv">
             <textarea
               className="notesInputText"
               type="text"
@@ -76,6 +76,7 @@ class Hub extends React.Component {
             <button className="add-btn btn-success" onClick={this.addNote}>
               <i className="delete-icon"> + </i>
             </button>
+          </div>
 
             <div className="outerWrap">
               <ul className="notesContainer">
@@ -109,7 +110,6 @@ class Hub extends React.Component {
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }
