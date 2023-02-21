@@ -70,7 +70,7 @@ function Books() {
     console.log(favoriteBooks);
     const updatedFavoriteBooks = favoriteBooks.splice(book => book.title !== title);
     localStorage.removeItem("favoriteBooks", JSON.stringify(updatedFavoriteBooks));
-    window.location.reload();
+   window.location.reload();
   }
 
   return (
@@ -129,7 +129,7 @@ function Books() {
         <div className="FavoriteBook">
   <h2 className="favouriteTitle">Your Favorite Books</h2>
   <Link to="/books">
-          <button onClick={deleteFavorite} className="btn btn-primary btn-lg home-btn" href="/books" role="button">Clear List</button>
+          <button onClick={deleteFavorite} className="btn btn-primary btn-lg home-btn" role="button">Clear List</button>
   </Link>
   {favoriteBooks.map((book) => (
     <div className="favBooksInner" key={book.title}>
