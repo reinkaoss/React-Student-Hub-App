@@ -17,11 +17,10 @@ footer {
   
   footer ul li a {
     color: #0e3b43 !important;
-    
   }
 
  a.foot-link {
-    text-decoration: none;
+    text-decoration: none !important;
   }
   
   p.copy {
