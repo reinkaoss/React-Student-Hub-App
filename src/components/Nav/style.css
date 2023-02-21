@@ -1,7 +1,7 @@
 a.logo {
   font-weight: bold;
-  font-size: 30px;
-  color: #0e3b43;
+  font-size: 40px;
+  color: #0e3b43 !important;
 }
 
 .navbar-nav .nav-link {
