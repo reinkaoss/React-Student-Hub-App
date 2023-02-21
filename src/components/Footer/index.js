@@ -14,8 +14,8 @@ function Footer() {
         <h5>Links</h5>
         <ul className="list-unstyled">
           <li><a className='foot-link' href="/">Home</a></li>
-          <li><a className='foot-link' href="books">Books</a></li>
-          <li><a className='foot-link' href="contact">Contact</a></li>
+          <li><a className='foot-link' href="/books">Books</a></li>
+          <li><a className='foot-link' href="/contact">Contact</a></li>
         </ul>
       </div>
       <div className="col-sm-3">

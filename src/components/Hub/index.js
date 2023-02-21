@@ -81,6 +81,7 @@ class Hub extends React.Component {
               <ul className="notesContainer">
                 {this.state.list.map((item) => {
                   return (
+                    <li>
                     <div className="container">
                       <div className="NotesRow">
                         <div className="card">
@@ -100,9 +101,11 @@ class Hub extends React.Component {
                         </div>
                       </div>
                     </div>
+                    </li>
                   );
                 })}
               </ul>
+
             </div>
           </div>
         </div>
