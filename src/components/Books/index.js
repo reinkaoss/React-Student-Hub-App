@@ -3,6 +3,7 @@ import axios from "axios";
 import "./style.css";
 import FavStar from "./images/favorite.png";
 import { BsBookmarkStar } from 'react-icons/bs';
+import { AiOutlineRead } from 'react-icons/ai';
 
 function Books() {
   const [books, setBooks] = useState("");
@@ -28,7 +29,7 @@ function Books() {
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
           books +
-          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=5"
+          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=1"
       )
       .then((response) => {
         setSearch(response.data);
@@ -44,6 +45,7 @@ function Books() {
       title: search.items[0].volumeInfo.title,
       image: search.items[0].volumeInfo.imageLinks.thumbnail,
       authors: search.items[0].volumeInfo.authors,
+      preview: search.items[0].volumeInfo.previewLink,
     };
 // check if the Title isn't the same so the book isn't added twice
     if (favoriteBooks.find((book) => book.title === newFavoriteBook.title)) {
@@ -58,6 +60,7 @@ function Books() {
       JSON.stringify(updatedFavoriteBooks)
     );
   }
+
 
   return (
     <div>
@@ -95,11 +98,15 @@ function Books() {
                     {" "}
       <p onClick={saveBook} className="favorite"> <BsBookmarkStar />{" "}</p></h4>
             )}
+            <div className="previewDiv">
               {search.items && search.items.length > 0 && (
               <p className="card-text">
-                {search.items[0].volumeInfo.authors}
+                {search.items[0].volumeInfo.authors}    
               </p>
             )}
+            {search.items && search.items.length > 0 && (
+            <a href={search.items[0].volumeInfo.previewLink} target="_blank" className="preview"> <AiOutlineRead />{" "}Preview</a> )}
+            </div>
             {/* <button className="btn btn-warning favButton" onClick={saveBook}> */}
               {/* <img className="favorite" src={FavStar} alt="bin" /> */}
         
