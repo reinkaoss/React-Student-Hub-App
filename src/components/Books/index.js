@@ -122,6 +122,9 @@ function Books() {
       <h5>{book.title}</h5>
       <img src={book.image} alt={book.title} />
       <p>{book.authors}</p>
+      {search.items && search.items.length > 0 && (
+      <a href={search.items[0].volumeInfo.previewLink} target="_blank"> <AiOutlineRead />{" "}Preview</a>
+      )}
     </div>
   ))}
 </div>
