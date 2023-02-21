@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import { NavLink } from "react-router-dom";
 
 function Footer() {
     return (
@@ -13,7 +14,17 @@ function Footer() {
       <div className="col-sm-3">
         <h5>Links</h5>
         <ul className="list-unstyled">
-          <li><a className='foot-link' href="/">Home</a></li>
+        <li className="nav-item active">
+        <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                Home
+              </NavLink>
+            </li>
           <li><a className='foot-link' href="/books">Books</a></li>
           <li><a className='foot-link' href="/contact">Contact</a></li>
         </ul>
