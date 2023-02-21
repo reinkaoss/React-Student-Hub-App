@@ -25,8 +25,28 @@ function Footer() {
                 Home
               </NavLink>
             </li>
-          <li><a className='foot-link' href="/books">Books</a></li>
-          <li><a className='foot-link' href="/contact">Contact</a></li>
+            <li className="nav-item">
+              <NavLink
+                to="books"
+                end
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                Books
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="contact"
+                end
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                Contact
+              </NavLink>
+            </li>    
         </ul>
       </div>
       <div className="col-sm-3">
