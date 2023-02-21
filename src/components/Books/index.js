@@ -45,7 +45,7 @@ function Books() {
       title: search.items[0].volumeInfo.title,
       image: search.items[0].volumeInfo.imageLinks.thumbnail,
       authors: search.items[0].volumeInfo.authors,
-      preview: search.items[0].volumeInfo.previewLink,
+      preview: JSON.stringify(search.items[0].volumeInfo.previewLink),
     };
 // check if the Title isn't the same so the book isn't added twice
     if (favoriteBooks.find((book) => book.title === newFavoriteBook.title)) {
@@ -59,8 +59,19 @@ function Books() {
       "favoriteBooks",
       JSON.stringify(updatedFavoriteBooks)
     );
+    console.log(updatedFavoriteBooks);
+
+
   }
 
+
+  function deleteFavorite(title) {
+    console.log(favoriteBooks);
+    const updatedFavoriteBooks = favoriteBooks.splice(book => book.title !== title);
+    setFavoriteBooks(updatedFavoriteBooks);
+    localStorage.removeItem("favoriteBooks", JSON.stringify(updatedFavoriteBooks));
+    window.location.reload();
+  }
 
   return (
     <div>
@@ -117,10 +128,12 @@ function Books() {
         </div>
         <div className="FavoriteBook">
   <h2 className="favouriteTitle">Your Favorite Books</h2>
+  <button className="btn btn-success clearFavs" onClick={deleteFavorite}>Clear List</button>
   {favoriteBooks.map((book) => (
     <div className="favBooksInner" key={book.title}>
       <h5>{book.title}</h5>
-      <img src={book.image} alt={book.title} />
+      <img  src={book.image} alt={book.title} />
+      
       <p>{book.authors}</p>
       {search.items && search.items.length > 0 && (
       <a href={search.items[0].volumeInfo.previewLink} target="_blank"> <AiOutlineRead />{" "}Preview</a>
