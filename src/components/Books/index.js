@@ -64,11 +64,10 @@ function Books() {
 
   }
 
-
+// CLear the favorite books list from localstorage
   function deleteFavorite(title) {
     console.log(favoriteBooks);
     const updatedFavoriteBooks = favoriteBooks.splice(book => book.title !== title);
-    setFavoriteBooks(updatedFavoriteBooks);
     localStorage.removeItem("favoriteBooks", JSON.stringify(updatedFavoriteBooks));
     window.location.reload();
   }
