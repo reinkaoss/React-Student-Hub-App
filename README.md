@@ -4,7 +4,14 @@ This is a simple web application that allows you to create, store and delete not
 ## Installation
 Clone the repository to your local machine: git clone https://github.com/Reinkaoss/react-project.
 Navigate to the project directory: cd react-notes-app.
-Install the dependencies: npm install.
+
+### Install the dependencies: 
+
+* npm install axios
+* npm install react-share
+* npm install react-icons
+* npm install uuidv4
+* npm install bootstrap@4.0.0
 
 ## Usage
 * Start the development server: npm start.
