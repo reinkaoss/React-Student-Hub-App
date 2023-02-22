@@ -58,7 +58,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .FavoriteBook {
+    .FavoriteBook, .booksContainer {
       flex-direction: column;
     }
   }
