@@ -1,6 +1,5 @@
-/* * {
-  border: 1px solid red;
-} */
+  @import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
+
 
 .home-text {
   margin: 50px auto;
@@ -27,14 +26,16 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color: #eaf2ef;
 }
 
 .home-img h1 {
     margin-top: 25px;
  text-align: center;
   transform: translate(0, 0);
-  color: #fff; /* set the text color */
+  color: #eaf2ef; /* set the text color */
+  font-family: 'Julee', cursive;
+  font-size: 80px;
 }
 
 .home-img p {
@@ -74,3 +75,59 @@ a.home-btn:hover {
   margin-top: 200px;
 }
   }
+
+  .book-search {
+    max-width: 1090px;
+    padding: 50px;
+    margin: 0 auto;
+    background-color: #0d090a;
+    color: #eaf2ef;
+  }
+  
+  .bk-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .search-header {
+    flex: 1 0 100%;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #eaf2ef;
+    font-family: 'Julee', cursive;
+  }
+  
+  .search-img {
+    flex: 1 0 300px;
+    margin: 50px auto 20px auto;
+    display: block;
+    max-width: 50%;
+  }
+  
+  .search-text {
+    flex: 1 0 100%;
+    font-size: 1rem;
+    text-align: justify;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .search-header {
+      flex: 1 0 30%;
+      text-align: left;
+    }
+  
+    .search-img {
+      flex: 1 0 40%;
+      margin: 0 20px 0 0;
+    }
+  
+    .search-text {
+      flex: 1 0 30%;
+      text-align: justify;
+    }
+  }
+  

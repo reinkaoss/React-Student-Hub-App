@@ -52,7 +52,7 @@ function Footer() {
       <div className="col-sm-3">
         <h5>Follow Us</h5>
         <ul className="list-unstyled">
-          <li><a className='foot-link' href="https://github.com/reinkaoss/React-Student-Hub-App" target="_blank">GitHub</a></li>
+          <li><a className='foot-link' href="https://github.com/reinkaoss/React-Student-Hub-App" target="_blank" rel="noreferrer">GitHub</a></li>
         </ul>
       </div>
     </div>
