@@ -70,7 +70,7 @@ function Books() {
       "favoriteBooks",
       JSON.stringify(updatedFavoriteBooks)
     );
-    // window.location.reload();
+    window.location.reload();
   }
 
   return (
