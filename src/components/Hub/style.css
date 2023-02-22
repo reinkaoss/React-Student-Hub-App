@@ -23,31 +23,34 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 0 !important;
   
 }
 
 .card {
   width: 400px;
-  height: 250px;
+  /* height:400px; */
   background-color: #0d090a !important;
   border-radius: 35px;
     display: flex;
     flex-direction: row;
-    height: 50vw;
     margin: 10px;
     color: #eaf2ea;
+    margin: 20px;
 }
 
-.card {
+/* .card {
     width: 400px;
     height: 200px;
     background-color: #0d090a !important;
     border-radius: 35px;
+    color: #eaf2ea;
     
-}
+} */
 
 .card-body {
     border-radius: 35px;
+    margin: 10px;
 }
 
 .notesInputText {
@@ -57,8 +60,11 @@
   border-radius: 20px;
 }
 
+.textInputDiv {
+  padding-left: 20px;
+}
 .buttonsContainer {
-  margin-top: 100px;
+  /* margin-top: 100px; */
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -92,8 +98,8 @@ textarea::placeholder {
 @media only screen and (max-width: 600px) {
   .notesInputText,
   .card {
-    width: 200px;
-    height: 100px;
+    width: 270px;
+    height: max-content;
     overflow: hidden;
   }
 }

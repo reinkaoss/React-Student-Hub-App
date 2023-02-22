@@ -1,7 +1,6 @@
 .share-container {
     display: flex;
     align-items: center;
-    margin: 20px;
     padding-left: 15px;
     justify-content: space-evenly;
   }
@@ -9,7 +8,7 @@
   .text {
     display: inline-block;
     margin-right: 10px;
-    color: #0d090a;
+    color: #eaf2af;
   }
   
   .icon {
@@ -17,3 +16,11 @@
     font-size: 20px;
   }
   
+  @media only screen and (max-width: 600px) {
+   .share-container, .text {
+      margin: 0;
+      width: 75%;
+      color: wheat;
+      font-size: 12px;
+    }
+  }

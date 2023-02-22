@@ -56,7 +56,7 @@ class Hub extends React.Component {
 
 
   render() {
-    console.log(`Number of active notes: ${this.state.list.length}`);
+    // console.log(`Number of active notes: ${this.state.list.length}`);
     return (
       <div>
         <h1 className="studentHubTitle">My Notes</h1>
