@@ -21,7 +21,7 @@ function Home() {
         <div className='bk-container'>
         <h1 className='search-header'>Search for your favorite book...</h1>
         
-          <img  className="search-img" src='./images/Book-search.jpg' />
+          <img  className="search-img" src='./images/Book-search.jpg' alt='Search for your favorite book'/>
 
           <p className='search-text'> 
           Looking for a specific book? Use our "Search for your favorite book" feature to find it quickly and easily. Try it out today and discover your new favorite read!
@@ -31,20 +31,20 @@ function Home() {
         <div className='bk-container'>
         <h1 className='search-header'>Take Notes...</h1>
         
-          <img  className="search-img" src='./images/Take-note.jpg' />
+          <img  className="search-img" src='./images/Take-note.jpg' alt='Take Notes' />
 
           <p className='search-text'> 
-          Looking for a specific book? Use our "Search for your favorite book" feature to find it quickly and easily. Try it out today and discover your new favorite read!
+          Our note-taking feature is a great way to keep track of your ideas and important information. With our user-friendly interface, you can create, and organize your notes quickly and easily.
           </p>
         </div>
 
         <div className='bk-container'>
         <h1 className='search-header'>Share with friends and colleagues...</h1>
         
-          <img  className="search-img" src='./images/Share.jpg' />
+          <img  className="search-img" src='./images/Share.jpg' alt='Share with friends and colleagues'/>
 
           <p className='search-text'> 
-          Looking for a specific book? Use our "Search for your favorite book" feature to find it quickly and easily. Try it out today and discover your new favorite read!
+          Our note-sharing feature makes it easy to collaborate and share your notes with others. With just a few clicks, you can share your notes with anyone, whether they use our platform or not.
           </p>
         </div>
       </section>
