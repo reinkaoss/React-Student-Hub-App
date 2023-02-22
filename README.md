@@ -2,6 +2,8 @@
 This is a simple web application that allows you to create, store and delete notes. It is built with React and uses local storage to store the notes. It also also allows the users to search for books from Google Books API.
 
 ## Table of Content:
+<!-- - [React Student Hub App](#react-student-hub-app) -->
+<!-- - [React Student Hub App](#react-student-hub-app) -->
 - [React Student Hub App](#react-student-hub-app)
   - [Table of Content:](#table-of-content)
   - [Installation](#installation)
