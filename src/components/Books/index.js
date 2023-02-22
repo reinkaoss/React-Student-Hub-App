@@ -219,20 +219,12 @@ function Books() {
       <div>
         <div className="book-head">
           <h2 className="favouriteTitle">Your Favorite Books</h2>
-          <Link
-            to="books"
-            end
-            className={({ isActive }) =>
-              isActive ? "nav-link active" : "nav-link"
-            }
-          >
             <button
               onClick={deleteFavorite}
               className="btn btn-primary btn-lg home-btn"
             >
               Clear List
             </button>
-          </Link>
         </div>
         <div className="FavoriteBook">
           {favoriteBooks.map((book) => (
