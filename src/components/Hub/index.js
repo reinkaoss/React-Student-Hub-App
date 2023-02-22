@@ -3,7 +3,7 @@ import "./style.css";
 import Bin from "./images/recycle-bin.png";
 // import Edit from "./images/edit.png";
 import { v4 as uuidv4 } from "uuid";
-import { GrNotes } from 'react-icons/gr';
+import { GrNotes } from "react-icons/gr";
 import ShareButton from "../ShareButton";
 
 class Hub extends React.Component {
@@ -43,9 +43,7 @@ class Hub extends React.Component {
     const storage = localStorage.getItem("list");
     if (storage != null) {
       this.setState({ list: JSON.parse(storage) });
-
     }
-
   }
   // Update with the list
   componentDidUpdate() {
@@ -54,16 +52,16 @@ class Hub extends React.Component {
     }
   }
 
-
   render() {
     // console.log(`Number of active notes: ${this.state.list.length}`);
     return (
       <div>
         <h1 className="studentHubTitle">My Notes</h1>
         <h5>
-          {/* Using react icons and getting the lenght of created notes to update */}
-          {" "}
-          <p className="activeNotes">Number of active notes: {this.state.list.length} <GrNotes />{" "}</p>
+          {/* Using react icons and getting the lenght of created notes to update */}{" "}
+          <p className="activeNotes">
+            Number of active notes: {this.state.list.length} <GrNotes />{" "}
+          </p>
         </h5>
         <div className="container Hub">
           <div className="textInputDiv">
@@ -100,7 +98,11 @@ class Hub extends React.Component {
                               </button>
                             </div>
                           </div>
-                          <ShareButton className="share" url={window.location.href} title={item.value} />
+                          <ShareButton
+                            className="share"
+                            url={window.location.href}
+                            title={item.value}
+                          />
                         </div>
                       </div>
                     </div>
@@ -108,7 +110,6 @@ class Hub extends React.Component {
                 );
               })}
             </ul>
-
           </div>
         </div>
       </div>

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
 // import FavStar from "./images/favorite.png";
-import { BsBookmarkStar } from 'react-icons/bs';
-import { AiOutlineRead } from 'react-icons/ai';
+import { BsBookmarkStar } from "react-icons/bs";
+import { AiOutlineRead } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 function Books() {
@@ -29,8 +29,8 @@ function Books() {
     axios
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
-        books +
-        "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=1"
+          books +
+          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=1"
       )
       .then((response) => {
         setSearch(response.data);
@@ -57,20 +57,20 @@ function Books() {
     const updatedFavoriteBooks = [...favoriteBooks, newFavoriteBook];
     setFavoriteBooks(updatedFavoriteBooks);
 
-    localStorage.setItem(
-      "favoriteBooks",
-      JSON.stringify(updatedFavoriteBooks)
-    );
+    localStorage.setItem("favoriteBooks", JSON.stringify(updatedFavoriteBooks));
     console.log(updatedFavoriteBooks);
-
-
   }
 
   // CLear the favorite books list from localstorage
   function deleteFavorite(title) {
     console.log(favoriteBooks);
-    const updatedFavoriteBooks = favoriteBooks.splice(book => book.title !== title);
-    localStorage.removeItem("favoriteBooks", JSON.stringify(updatedFavoriteBooks));
+    const updatedFavoriteBooks = favoriteBooks.splice(
+      (book) => book.title !== title
+    );
+    localStorage.removeItem(
+      "favoriteBooks",
+      JSON.stringify(updatedFavoriteBooks)
+    );
     window.location.reload();
   }
 
@@ -107,9 +107,13 @@ function Books() {
           )}
           <div className="card-body">
             {search.items && search.items.length > 0 && (
-              <h4 className="card-title">{search.items[0].volumeInfo.title}
-                {" "}
-                <p onClick={saveBook} className="favorite"> <BsBookmarkStar />{" "}</p></h4>
+              <h4 className="card-title">
+                {search.items[0].volumeInfo.title}{" "}
+                <p onClick={saveBook} className="favorite">
+                  {" "}
+                  <BsBookmarkStar />{" "}
+                </p>
+              </h4>
             )}
             <div className="previewDiv">
               {search.items && search.items.length > 0 && (
@@ -118,47 +122,64 @@ function Books() {
                 </p>
               )}
               {search.items && search.items.length > 0 && (
-                <a href={search.items[0].volumeInfo.previewLink} target="_blank" rel="noreferrer" className="preview"> <AiOutlineRead />{" "}Preview</a>)}
+                <a
+                  href={search.items[0].volumeInfo.previewLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="preview"
+                >
+                  {" "}
+                  <AiOutlineRead /> Preview
+                </a>
+              )}
             </div>
             {/* <button className="btn btn-warning favButton" onClick={saveBook}> */}
             {/* <img className="favorite" src={FavStar} alt="bin" /> */}
 
             {/* </button> */}
-
           </div>
         </div>
       </div>
       <div>
         <div className="book-head">
-        <h2 className="favouriteTitle">Your Favorite Books</h2>
-        <Link to="books"
-          end
-          className={({ isActive }) =>
-            isActive ? "nav-link active" : "nav-link"
-          }>
-          <button onClick={deleteFavorite} className="btn btn-primary btn-lg home-btn">Clear List</button>
-        </Link>
+          <h2 className="favouriteTitle">Your Favorite Books</h2>
+          <Link
+            to="books"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            <button
+              onClick={deleteFavorite}
+              className="btn btn-primary btn-lg home-btn"
+            >
+              Clear List
+            </button>
+          </Link>
         </div>
         <div className="FavoriteBook">
-        {favoriteBooks.map((book) => (
-          <div className="favBooksInner" key={book.title}>
-            <h5>{book.title}</h5>
-            <img src={book.image} alt={book.title} />
+          {favoriteBooks.map((book) => (
+            <div className="favBooksInner" key={book.title}>
+              <h5>{book.title}</h5>
+              <img src={book.image} alt={book.title} />
 
-            <p>{book.authors}</p>
-            {search.items && search.items.length > 0 && (
-              <a href={search.items[0].volumeInfo.previewLink} target="_blank" rel="noreferrer"> <AiOutlineRead />{" "}Preview</a>
-            )}
-          </div>
-        ))}
+              <p>{book.authors}</p>
+              {search.items && search.items.length > 0 && (
+                <a
+                  href={search.items[0].volumeInfo.previewLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <AiOutlineRead /> Preview
+                </a>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-
     </div>
-
-  )
+  );
 }
 export default Books;
-
-
-
