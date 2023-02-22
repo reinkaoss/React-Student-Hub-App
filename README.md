@@ -1,6 +1,19 @@
 # React Student Hub App
 This is a simple web application that allows you to create, store and delete notes. It is built with React and uses local storage to store the notes. It also also allows the users to search for books from Google Books API.
 
+## Table of Content:
+- [React Student Hub App](#react-student-hub-app)
+  - [Table of Content:](#table-of-content)
+  - [Installation](#installation)
+    - [Install the dependencies:](#install-the-dependencies)
+  - [Usage](#usage)
+  - [Dependencies/Techonologies](#dependenciestechonologies)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Deployed Link](#deployed-link)
+  - [Screenshots](#screenshots)
+  - [Team Members](#team-members)
+
 ## Installation
 Clone the repository to your local machine: git clone https://github.com/Reinkaoss/react-project.
 Navigate to the project directory: cd react-notes-app.
