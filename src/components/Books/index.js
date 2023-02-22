@@ -29,8 +29,7 @@ function Books() {
     axios
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
-          books +
-          "lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=1"
+          books + "intitle&lite&key=AIzaSyDx_ik4msRaT_G-hnhwokbUvajRFdu_zAM&maxResults=5"
       )
       .then((response) => {
         setSearch(response.data);
@@ -133,12 +132,89 @@ function Books() {
                 </a>
               )}
             </div>
-            {/* <button className="btn btn-warning favButton" onClick={saveBook}> */}
-            {/* <img className="favorite" src={FavStar} alt="bin" /> */}
-
-            {/* </button> */}
           </div>
         </div>
+
+           {/* Second Output */}
+           <div className="BooksCard">
+          {search.items && search.items.length > 1 && (
+            <img
+              className="card-img-top"
+              src={search.items[1].volumeInfo.imageLinks.thumbnail}
+              alt="test"
+            />
+          )}
+          <div className="card-body">
+            {search.items && search.items.length > 1 && (
+              <h4 className="card-title">
+                {search.items[0].volumeInfo.title}{" "}
+                <p onClick={saveBook} className="favorite">
+                  {" "}
+                  <BsBookmarkStar />{" "}
+                </p>
+              </h4>
+            )}
+            <div className="previewDiv">
+              {search.items && search.items.length > 1 && (
+                <p className="card-text">
+                  {search.items[1].volumeInfo.authors}
+                </p>
+              )}
+              {search.items && search.items.length > 1 && (
+                <a
+                  href={search.items[1].volumeInfo.previewLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="preview"
+                >
+                  {" "}
+                  <AiOutlineRead /> Preview
+                </a>
+              )}
+            </div>
+            </div>
+            </div>
+
+
+           {/* Third Output */}
+           <div className="BooksCard">
+          {search.items && search.items.length > 2 && (
+            <img
+              className="card-img-top"
+              src={search.items[2].volumeInfo.imageLinks.thumbnail}
+              alt="test"
+            />
+          )}
+          <div className="card-body">
+            {search.items && search.items.length > 2 && (
+              <h4 className="card-title">
+                {search.items[2].volumeInfo.title}{" "}
+                <p onClick={saveBook} className="favorite">
+                  {" "}
+                  <BsBookmarkStar />{" "}
+                </p>
+              </h4>
+            )}
+            <div className="previewDiv">
+              {search.items && search.items.length > 2 && (
+                <p className="card-text">
+                  {search.items[2].volumeInfo.authors}
+                </p>
+              )}
+              {search.items && search.items.length > 2 && (
+                <a
+                  href={search.items[2].volumeInfo.previewLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="preview"
+                >
+                  {" "}
+                  <AiOutlineRead /> Preview
+                </a>
+              )}
+            </div>
+            </div>
+            </div>
       </div>
       <div>
         <div className="book-head">
