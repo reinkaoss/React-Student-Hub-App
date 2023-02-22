@@ -19,9 +19,12 @@ function App() {
           <Route path="books" element={<Books />} />
           <Route path="contact" element={<Contact />} />
         </Routes>
+        <div>
         <Footer />
+        </div>
       </div>
     </Router>
+    
   );
 }
 

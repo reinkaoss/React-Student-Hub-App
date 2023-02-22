@@ -1,9 +1,10 @@
-import React, { setState, useState } from "react";
+import React from "react";
 import "./style.css";
 import Bin from "./images/recycle-bin.png";
-import Edit from "./images/edit.png";
+// import Edit from "./images/edit.png";
 import { v4 as uuidv4 } from "uuid";
 import { GrNotes } from 'react-icons/gr';
+import ShareButton from "../ShareButton";
 
 class Hub extends React.Component {
   state = {
@@ -21,7 +22,7 @@ class Hub extends React.Component {
       id: uuidv4(),
       value: this.state.newItem,
     };
-    
+
     // copy list of tasks, using [...] to get all items
     const list = [...this.state.list, newItem];
 
@@ -30,7 +31,7 @@ class Hub extends React.Component {
       newItem: "",
     });
   };
-  
+
   // Using filter to delete item based on ID
   deleteNote = (id) => {
     const updatedNotesList = this.state.list.filter((item) => item.id !== id);
@@ -44,7 +45,7 @@ class Hub extends React.Component {
       this.setState({ list: JSON.parse(storage) });
 
     }
-    
+
   }
   // Update with the list
   componentDidUpdate() {
@@ -52,18 +53,18 @@ class Hub extends React.Component {
       localStorage.setItem("list", JSON.stringify(this.state.list));
     }
   }
-  
+
 
   render() {
     console.log(`Number of active notes: ${this.state.list.length}`);
     return (
       <div>
         <h1 className="studentHubTitle">My Notes</h1>
-       <h5>
-        {/* Using react icons and getting the lenght of created notes to update */}
-      {" "}
-      <p className="activeNotes">Number of active notes: {this.state.list.length} <GrNotes />{" "}</p>
-    </h5>
+        <h5>
+          {/* Using react icons and getting the lenght of created notes to update */}
+          {" "}
+          <p className="activeNotes">Number of active notes: {this.state.list.length} <GrNotes />{" "}</p>
+        </h5>
         <div className="container Hub">
           <div className="textInputDiv">
             <textarea
@@ -78,11 +79,11 @@ class Hub extends React.Component {
             </button>
           </div>
 
-            <div className="outerWrap">
-              <ul className="notesContainer">
-                {this.state.list.map((item) => {
-                  return (
-                    <li>
+          <div className="outerWrap">
+            <ul className="notesContainer">
+              {this.state.list.map((item) => {
+                return (
+                  <li>
                     <div className="container">
                       <div className="NotesRow">
                         <div className="card">
@@ -99,17 +100,18 @@ class Hub extends React.Component {
                               </button>
                             </div>
                           </div>
+                          <ShareButton className="share" url={window.location.href} title={item.value} />
                         </div>
                       </div>
                     </div>
-                    </li>
-                  );
-                })}
-              </ul>
+                  </li>
+                );
+              })}
+            </ul>
 
-            </div>
           </div>
         </div>
+      </div>
     );
   }
 }

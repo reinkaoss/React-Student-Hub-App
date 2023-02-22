@@ -29,19 +29,21 @@
 .card {
   width: 400px;
   height: 250px;
-  background-color: #599d48 !important;
+  background-color: #0d090a !important;
   border-radius: 35px;
     display: flex;
     flex-direction: row;
     height: 50vw;
     margin: 10px;
+    color: #eaf2ea;
 }
 
 .card {
     width: 400px;
     height: 200px;
-    background-color: #599d48 !important;
+    background-color: #0d090a !important;
     border-radius: 35px;
+    
 }
 
 .card-body {
@@ -81,6 +83,10 @@ textarea::placeholder {
     align-items: center;
      */
   margin: 0 auto;
+}
+
+.share{
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -136,7 +142,7 @@ textarea::placeholder {
 }
 
 .FavoriteBook {
-  border: 1px solid darkgreen;
+  border: 1px solid #0d090a;
   display: flex;
   flex-direction: row;
   align-items: center;

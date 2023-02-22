@@ -1,0 +1,19 @@
+.share-container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding-left: 15px;
+    justify-content: space-evenly;
+  }
+  
+  .text {
+    display: inline-block;
+    margin-right: 10px;
+    color: #0d090a;
+  }
+  
+  .icon {
+    display: inline-block;
+    font-size: 20px;
+  }
+  

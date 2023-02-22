@@ -17,6 +17,38 @@ function Home() {
         </div>
       </div>
 
+      <section className='book-search'>
+        <div className='bk-container'>
+        <h1 className='search-header'>Search for your favorite book...</h1>
+        
+          <img  className="search-img" src='./images/Book-search.jpg' />
+
+          <p className='search-text'> 
+          Looking for a specific book? Use our "Search for your favorite book" feature to find it quickly and easily. Try it out today and discover your new favorite read!
+          </p>
+        </div>
+
+        <div className='bk-container'>
+        <h1 className='search-header'>Take Notes...</h1>
+        
+          <img  className="search-img" src='./images/Take-note.jpg' />
+
+          <p className='search-text'> 
+          Looking for a specific book? Use our "Search for your favorite book" feature to find it quickly and easily. Try it out today and discover your new favorite read!
+          </p>
+        </div>
+
+        <div className='bk-container'>
+        <h1 className='search-header'>Share with friends and colleagues...</h1>
+        
+          <img  className="search-img" src='./images/Share.jpg' />
+
+          <p className='search-text'> 
+          Looking for a specific book? Use our "Search for your favorite book" feature to find it quickly and easily. Try it out today and discover your new favorite read!
+          </p>
+        </div>
+      </section>
+
     </div>
   )
 }
